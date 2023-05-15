@@ -1,0 +1,34 @@
+<h2 class="section-title">Proyectos <app-add-button  *ngIf="isLogged && isAdmin && !loading" (onAddClick)="toggleAdd()"></app-add-button></h2>
+<div class="section-list" *ngIf="!loading && projects.length > 0">
+    <app-project-item
+    *ngFor="let project of projects"
+    [project]="project"
+    [isLogged]="isLogged"
+    [isAdmin]="isAdmin"
+    (onEdit)="toggleEdit($event)"
+    (onDelete)="toggleDelete($event)"></app-project-item>
+</div>
+<div *ngIf="!loading && projects.length === 0" class="empty-list">
+    <p>No se encontraron projectos</p>
+</div>
+<div class="loader-container" *ngIf="loading">
+    <div class="loader">
+        <app-loader [type]="card"></app-loader>
+    </div>
+</div>
+<app-project-add
+*ngIf="adding"
+[personId]="personId"
+(onAdd)="addProject($event)"
+(onCancelAdd)="toggleAdd()"></app-project-add>
+
+<app-project-edit
+*ngIf="editing"
+[project]="selectedProject"
+(onEditConfirm)="editProject($event)"
+(onCancelEdit)="toggleEdit()"></app-project-edit>
+
+<app-delete-confirmation
+*ngIf="deleting"
+(onCancelDelete)="toggleDelete()"
+(onConfirmDelete)="deleteProject()"></app-delete-confirmation>

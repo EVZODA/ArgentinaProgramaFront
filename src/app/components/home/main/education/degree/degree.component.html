@@ -1,0 +1,19 @@
+
+<div class="info">
+    <div class="info-group">
+        <p class="small-card-text">Título</p>
+        <h3 class="institution">{{degree.title}}</h3>
+    </div>
+    <div class="info-group">
+        <p class="small-card-text">Institución</p>
+        <p>{{degree.institution}}</p>
+    </div>
+    <div class="info-group">
+        <p class="small-card-text">Fecha de comienzo y finalización</p>
+        <p>{{degree.startDate}} - {{degree.endDate ? degree.endDate : "Cursando"}}</p>
+    </div>
+</div>
+<div class="options" *ngIf="isLogged && isAdmin">
+    <app-edit-button (onEditClick)="editDegree()"></app-edit-button>
+    <app-delete-button (onDeleteClick)="deleteDegree()"></app-delete-button>
+</div>

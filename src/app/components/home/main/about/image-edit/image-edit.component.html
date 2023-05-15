@@ -1,0 +1,15 @@
+<div class="modal">
+    <form (ngSubmit)="onSubmit()">
+        <div class="photo">
+            <img src="{{previewImage}}" alt="">
+        </div>
+        <div class="user-input">
+            <input id="image" name="image" type="file" accept=".png, .jpg, .jpeg" (change)="uploadImage($event)">
+            <label for="image" class="btn btn-blue btn-hover-blue upload-btn">Subir imagen</label>
+        </div>
+        <div class="options">
+            <button type="button" class="btn btn-white btn-hover-white" (click)="closeModal()">Cancelar</button>
+            <button type="submit" class="btn btn-blue btn-fill">Confirmar</button>
+        </div>
+    </form>
+</div>

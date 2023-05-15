@@ -1,0 +1,47 @@
+.add-button {
+    padding: 5px;
+    border-radius: 5px;
+
+    font-family: var(--font-2);
+}
+
+.add-button:hover {
+    background-color: rgba(70, 70, 225, 0.3);
+}
+
+svg {
+    width: 100%;
+}
+
+svg path {
+    stroke: var(--white);
+}
+
+form {
+    display: flex;
+    border: 2px solid var(--green);
+    border-radius: 5px;
+
+    overflow: hidden;
+}
+
+form > * {
+    font-family: var(--font-2);
+}
+
+input {
+    font-size: 1rem;
+    padding: 5px;
+    padding-left: 10px;
+    border: none;
+    width: 100px;
+}
+
+input:focus {
+    outline: none;
+}
+
+.square {
+    aspect-ratio: 1/1;
+    height: 40px;
+}

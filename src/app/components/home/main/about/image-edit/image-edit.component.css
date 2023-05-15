@@ -1,0 +1,58 @@
+@import url('../../../../common/css/modal.css');
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.photo {
+    border: 2px solid var(--blue);
+    border-radius: 15px;
+    overflow: hidden;
+
+    width: 200px;
+    max-width: 200px;
+    aspect-ratio: 1/1;
+
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo > img {
+    max-height: 100%;
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+
+    background-color: lightgray;
+}
+
+.user-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+    margin-bottom: 20px;
+}
+
+input[type = file] {
+    display: none;
+}
+
+.upload-btn {
+    margin-top: 20px;
+}
+
+.options {
+    display: flex;
+    width: 100%;
+}
+
+.options > button {
+    flex-basis: 0;
+    flex-grow: 1;
+    margin: 0px 5px;
+}

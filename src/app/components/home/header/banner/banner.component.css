@@ -1,0 +1,30 @@
+:host {
+    flex-grow: 1;
+
+    display: flex;
+    max-width: 1080px;
+    width: 100%;
+    border-left: 1px solid rgb(43, 43, 43);
+    border-right: 1px solid rgb(43, 43, 43);
+
+    aspect-ratio: 21/9;
+}
+
+.banner {
+    position: relative;
+    background-color: lightgray;
+    flex-grow: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-position: 50%;
+    background-size: cover;
+}
+
+.options {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}

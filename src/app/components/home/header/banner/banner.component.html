@@ -1,0 +1,16 @@
+<div class="banner" [ngStyle]="{'background-image': person ?
+person.bannerImageUrl ? 
+'url(' + person.bannerImageUrl + ')': 'url(https://firebasestorage.googleapis.com/v0/b/ortega-portfolio.appspot.com/o/users%2Fbanner_placeholder.jpg?alt=media&token=3920a945-cad7-4ca9-a5d9-d86f00d0c9ab)' : 
+''}">
+    <!-- <img *ngIf="person" src="{{person.bannerImage}}" alt="">
+    <img *ngIf="!person" src="" alt=""> -->
+    <div class="options" *ngIf="isLogged && isAdmin && person">
+        <app-edit-button (onEditClick)="toggleBannerEdit()"></app-edit-button>
+    </div>
+</div>
+
+<app-banner-edit
+*ngIf="bannerEdit"
+[person]="person"
+(onCancelEdit)="toggleBannerEdit()"
+(onConfirmEdit)="editBanner($event)"></app-banner-edit>
